@@ -30,10 +30,3 @@ export const knock = (num = 5) => {
   throw TrainingSkipError("未実施");
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-/*
-input number: 2
-0
-1
-2
-*/

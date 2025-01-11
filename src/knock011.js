@@ -10,19 +10,17 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 //
 // [Tips]
 // - for文やwhile文、あるいはArrayメソッドを使って10回繰り返す
-//   for (let i = 0; i < 10; i++) { ... }
+//   for (var i = 0; i < 10; i++) { ... }
 //   など
 //
 // @returns {string}
 //   "Hello World!\n" を10回連結した文字列 (最後の行末については気にしない)
 export const knock = () => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  var result = ""
+  for(let i = 0; i < 10; i++){
+    result += "Hello World!\n";
+  }
+  return result
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
-
-// 文字列も += で足し算追加できるよ
-// var x = ""
-// x += "あいうえお" // => あいうえお
-// x += "かきくけこ" // => あいうえお
-// console.logの中で実行するのは怪しいかも
