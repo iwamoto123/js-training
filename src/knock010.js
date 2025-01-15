@@ -19,6 +19,7 @@ import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // @returns {string} "input number: num\nabsolute value is absValue"
 export const knock = (num = 1) => {
   // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  throw TrainingSkipError("未実施");
+  const absValue = Math.abs(num);
+  return`input number: ${num}\nabsolute value is ${absValue}`;
   // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
 };
