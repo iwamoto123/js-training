@@ -1,6 +1,6 @@
 export default {
   reporters: [
-    // 'default',
-    './myCustomReporter.js',
+    // "default",
+    "./myCustomReporter.js",
   ],
 };
