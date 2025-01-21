@@ -23,5 +23,12 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - [割り算の結果, 掛け算の結果]
  */
 export const knock = (value1 = 10, value2 = 3) => {
-  throw new TrainingSkipError("未実装");
+  if(value2 === 0){
+    throw new TrainingSkipError("エラー");
+  }else{
+    const result = Math.trunc(value1/value2)
+    const result2 = result * value2
+    let arr = [result, result2]
+    return arr;
+  }
 };

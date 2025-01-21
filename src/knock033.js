@@ -33,5 +33,14 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - 入力値以外の1から9までの数字
  */
 export const knock = (exclude) => {
-  throw new TrainingSkipError("未実装");
+  const arr = [];
+
+  for(let i = 1; i <= 9; i++){
+    if(i === exclude){
+      continue;
+    }else{
+      arr.push(i);
+    }
+  }
+  return arr;
 };

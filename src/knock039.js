@@ -28,5 +28,12 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - 計算結果を格納した配列
  */
 export const knock = () => {
-  throw new TrainingSkipError("未実装");
+  const arr = [3, 7, 0, 8, 4, 1, 9, 6, 5, 2];
+  const resultArray = [];
+  let result = 0;
+  for(let i = 0; i < 9; i++){
+    result = arr[i] - arr[i+1]
+    resultArray.push(result)
+  }
+  return resultArray;
 };

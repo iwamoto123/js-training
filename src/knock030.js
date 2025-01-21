@@ -28,5 +28,12 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 棒グラフ（"*"をn個並べた文字列）。nが0以下の場合は空文字列。
  */
 export const knock = (n = 7) => {
-  throw new TrainingSkipError("未実装");
+  let result = ""
+  if(n <= 0){
+    return result;
+  }else{
+    for(let i = 0; i < n; i++)
+    result += "*"
+  }
+  return result;
 };
