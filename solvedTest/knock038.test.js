@@ -1,4 +1,4 @@
-import { knock } from "../src/knock038.js";
+import { knock } from "../solvedSrc/knock038.js";
 
 describe("No. 38 さらに・配列要素の参照", () => {
   test("10回の参照が正しい", () => {

@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "./common/TrainingSkipError.js";
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 // No. 21 文字列の繰り返し
 // 入力された文字列を指定された回数繰り返し、繋げた文字列を返すプログラムを作成します。
 
@@ -20,9 +20,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 繰り返し結果の文字列
  */
 export const knock = (str, count) => {
-  let result = ""
-  for(let i = 0; i < count; i++){
-    result += `${str}`
-  };
+  let result = "";
+  for (let i = 0; i < count; i++) {
+    result += `${str}`;
+  }
   return result;
 };

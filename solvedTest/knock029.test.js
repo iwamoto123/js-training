@@ -1,4 +1,4 @@
-import { knock } from "../src/knock029.js";
+import { knock } from "../solvedSrc/knock029.js";
 
 describe("No. 29 5つの合計", () => {
   test("入力が [11, 22, 33, 44, 55] の場合", () => {

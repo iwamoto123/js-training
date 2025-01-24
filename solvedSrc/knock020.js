@@ -1,4 +1,4 @@
-import { TrainingSkipError } from "./common/TrainingSkipError.js";
+import { TrainingSkipError } from "../src/common/TrainingSkipError.js";
 
 // No. 20 割って掛ける
 // 整数値を2つ入力し、1つ目の値を2つ目の値で割った結果を表示し、
@@ -23,12 +23,12 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<number>} - [割り算の結果, 掛け算の結果]
  */
 export const knock = (value1 = 10, value2 = 3) => {
-  if(value2 === 0){
+  if (value2 === 0) {
     throw new TrainingSkipError("エラー");
-  }else{
-    const result = Math.trunc(value1/value2)
-    const result2 = result * value2
-    let arr = [result, result2]
+  } else {
+    const result = Math.trunc(value1 / value2);
+    const result2 = result * value2;
+    let arr = [result, result2];
     return arr;
   }
 };

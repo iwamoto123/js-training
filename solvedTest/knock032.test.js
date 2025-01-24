@@ -1,4 +1,4 @@
-import { knock } from "../src/knock032.js";
+import { knock } from "../solvedSrc/knock032.js";
 
 describe("No. 32 5の倍数でbar", () => {
   test("1から20の出力が正しい", () => {
