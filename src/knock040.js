@@ -1,23 +1,24 @@
-// No. 10 絶対値
-// 整数値を入力させ、その値を絶対値にして表示するプログラムを作成せよ。
+import { TrainingSkipError } from "./common/TrainingSkipError.js";
+
+// No. 40 even or odd
+// 整数値を入力させ、その値が偶数ならばeven、奇数ならばoddと表示するプログラムを作成せよ。
+//
 // 実行例:
-//   $ ./knock10
-//   input number: 1
-//   absolute value is 1
-//   $ ./knock10
-//   input number: -2
-//   absolute value is 2
+// input number:
+// 6
+// 6 is even.
 //
-// [Tips]
-// - 絶対値（abs）を求める方法：
-//     1) if (num < 0) num = num * -1;  // 負の値なら-1を掛ける
-//     2) あるいは num = Math.abs(num);
+// input number:
+// 7
+// 7 is odd.
 //
-// @param {number} num
-// @returns {string} "input number: num\nabsolute value is absValue"
-export const knock = (num = 1) => {
-  // ---- ⬇︎⬇︎ ここから ⬇︎⬇︎ ----
-  const absValue = Math.abs(num);
-  return `input number: ${num}\nabsolute value is ${absValue}`;
-  // ---- ⬆︎⬆︎ ここまで ⬆︎⬆︎ ----
+// 偶数＝2で割り切れる＝2で割った余りが0
+
+/**
+ * 偶数・奇数判定関数
+ * @param {number} value - 判定する整数値
+ * @returns {string} - "<value> is even." または "<value> is odd."
+ */
+export const knock = (value = 6) => {
+  throw new TrainingSkipError("未実装");
 };
