@@ -25,5 +25,32 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - 九九の表を文字列で返す（各数値は右詰めで3文字分）
  */
 export const knock = () => {
-  throw new TrainingSkipError("未実装");
+  let result = "";
+
+  for(let i = 1; i <= 9; i++){
+    let row = "";
+
+    for(let j = 1; j <= 9; j++){
+
+      let value = i * j;
+      let rowValue = value.toString();
+
+      while(rowValue.length < 3){
+        rowValue = " " + rowValue;
+      }
+
+      if(j <= 9){
+        row += rowValue;
+      }else{
+        row += "\n";
+      }
+    }
+
+      if(i < 9){
+        result += row + "\n";
+      }else{
+        result += row;
+      }
+  }
+  return result;
 };

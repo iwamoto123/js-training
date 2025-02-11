@@ -33,5 +33,31 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 範囲外の点数がある場合は "点数は0以上100以下の整数で入力してください" というエラーを投げる
  */
 export const knock = (scores = [80, 65, 90, 75, 85]) => {
-  throw new TrainingSkipError("未実装");
+  if (scores.length === 0) {
+    throw new Error("点数が入力されていません");
+  }
+
+  if (scores.some((value) => value < 0 || value > 100)) {
+    throw new Error("点数は0以上100以下の整数で入力してください");
+  }
+
+  let total = 0;
+  let average = 0;
+  let max = scores[0];
+  let min = scores[0];
+
+  for (const score of scores) {
+    total += score;
+    if (score > max) {
+      max = score;
+    }
+    if (score < min) {
+      min = score;
+    }
+  }
+
+//文字列として返すときはtoFixed(x) 数値として計算するときは Math.round()
+  average = (total / scores.length).toFixed(1)
+
+  return {total, average, max, min};
 };

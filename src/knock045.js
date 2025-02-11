@@ -30,5 +30,15 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 距離が0以下の場合は "距離は0より大きい値を入力してください" というエラーを投げる
  */
 export const knock = (distance = 2.4) => {
-  throw new TrainingSkipError("未実装");
+  let count = 0;
+  let result = 0;
+  if(distance <= 0){
+    throw new Error("距離は0より大きい値を入力してください");
+  }else if(distance <= 1.7){
+    return "610 yen";
+  }else{
+    count = Math.ceil((distance - 1.7)/0.313);
+    result = 610 + 80 * count
+    return `${result} yen`
+  }
 };

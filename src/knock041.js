@@ -28,5 +28,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - "<value> is a single figure." または "<value> is not a single figure."
  */
 export const knock = (value = 6) => {
-  throw new TrainingSkipError("未実装");
+  if(0 < value && value <=9){
+    return `${value} is a single figure.`;
+  }else{
+    return `${value} is not a single figure.`;
+  }
 };

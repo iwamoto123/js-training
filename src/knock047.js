@@ -22,5 +22,8 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<string>} - ["first number = X", "second number = Y"] の形式で返す
  */
 export const knock = (first = 5, second = 8) => {
-  throw new TrainingSkipError("未実装");
+  let temp = first;
+  first = second;
+  second = temp;
+  return [`first number = ${first}`,`second number = ${second}`]
 };

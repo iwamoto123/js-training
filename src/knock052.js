@@ -30,5 +30,11 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - "XXXX年は閏年です" または "XXXX年は閏年ではありません"
  */
 export const knock = (year = 2000) => {
-  throw new TrainingSkipError("未実装");
+  if(year < 0){
+    return `${year}年は閏年ではありません`;
+  }else if(year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)){
+    return `${year}年は閏年です`;
+  }else{
+    return `${year}年は閏年ではありません`;
+  }
 };

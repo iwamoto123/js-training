@@ -31,5 +31,23 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 金額が0以下の場合は "金額は0より大きい値を入力してください" というエラーを投げる
  */
 export const knock = (payment = 54321) => {
-  throw new TrainingSkipError("未実装");
+
+  const arr = [];
+
+  if(payment <= 0){
+    throw new Error("金額は0より大きい値を入力してください");
+  }
+
+  const currency = [10000, 5000, 1000, 500, 100, 50, 10, 5, 1];
+
+  let rowValue = payment;
+
+  for(let i = 0; i < currency.length; i++){
+      let valueNunber = Math.floor(rowValue / currency[i]);
+      rowValue = rowValue % currency[i];
+      arr.push(`${currency[i]}円: ${valueNunber}枚`);
+    
+  }
+  return arr;
+
 };

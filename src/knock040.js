@@ -20,5 +20,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - "<value> is even." または "<value> is odd."
  */
 export const knock = (value = 6) => {
-  throw new TrainingSkipError("未実装");
+  if(value % 2 === 0){
+    return `${value} is even.`;
+  }else{
+    return `${value} is odd.`;
+  }
 };

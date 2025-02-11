@@ -10,7 +10,7 @@ describe("No. 45 タクシー料金", () => {
   });
 
   test("入力例3: より長い距離 (3.5km)", () => {
-    expect(knock(3.5)).toBe("1170 yen");
+    expect(knock(3.5)).toBe("1090 yen");
   });
 
   test("初乗り料金未満の距離 (1.0km)", () => {

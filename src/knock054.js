@@ -26,5 +26,22 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 配列が空の場合は "配列が空です" というエラーを投げる
  */
 export const knock = (numbers = [10, -5, 8, 3, 2, 7]) => {
-  throw new TrainingSkipError("未実装");
+  if (numbers.length === 0) {
+    throw new Error("配列が空です");
+  }
+
+  let max = -Infinity;
+  let min = Infinity;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (max < numbers[i]) {
+      max = numbers[i];
+    }
+
+    if (min > numbers[i]) {
+      min = numbers[i];
+    }
+  }
+
+  return [`最大値: ${max}`, `最小値: ${min}`];
 };

@@ -28,5 +28,19 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 入力値が0以下の場合は "正の整数を入力してください" というエラーを投げる
  */
 export const knock = (value = 7) => {
-  throw new TrainingSkipError("未実装");
+  if(value <= 0){
+    throw new Error("正の整数を入力してください");
+  }
+
+  let result = `${value}`;
+
+  while(value !== 1){
+    if(value % 2 === 0){
+      value /= 2;
+    }else{
+      value = value * 3 + 1
+    }
+    result += ` → ${value}`
+  }
+  return result;
 };

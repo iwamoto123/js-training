@@ -30,5 +30,16 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 人数が負の値の場合は "人数は0以上の値を入力してください" というエラーを投げる
  */
 export const knock = (adults = 2, children = 3) => {
-  throw new TrainingSkipError("未実装");
+  let all = adults + children;
+  let total = adults * 1000 + children * 500;
+  if(adults < 0 || children < 0){
+    throw new Error("人数は0以上の値を入力してください");
+  }
+
+  if(all < 10){
+    return `${total} yen`;
+  }else{
+    total *= 0.8
+    return `${total} yen`;
+  }
 };

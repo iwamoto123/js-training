@@ -23,5 +23,8 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - "XX.XX dollars" の形式で返す（小数第2位まで）
  */
 export const knock = (yen = 10000) => {
-  throw new TrainingSkipError("未実装");
+  let dollars = yen / 110.0
+  dollars = dollars.toFixed(2)
+
+  return `${dollars} dollars`
 };

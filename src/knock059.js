@@ -47,5 +47,23 @@ export const knock = (
   matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
   matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 ) => {
-  throw new TrainingSkipError("未実装");
+
+    if (
+    !Array.isArray(matrix1) || !Array.isArray(matrix2) ||
+    matrix1.length !== 3 || matrix2.length !== 3 ||
+    matrix1.some(row => !Array.isArray(row) || row.length !== 3) ||
+    matrix2.some(row => !Array.isArray(row) || row.length !== 3)
+  ) {
+    throw new Error("3×3の行列を入力してください");
+  }
+
+  const arr = [];
+  for(let i = 0; i < 3; i++){
+    arr[i] = [];
+    for(let j = 0; j < 3; j++){
+      arr[i][j] = matrix1[i][j] + matrix2[i][j];
+    }
+  }
+
+  return arr;
 };

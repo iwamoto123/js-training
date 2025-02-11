@@ -30,5 +30,25 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 入力値が1以下の場合は "2以上の整数を入力してください" というエラーを投げる
  */
 export const knock = (value = 12) => {
-  throw new TrainingSkipError("未実装");
+  if (value <= 1) {
+    throw new Error("2以上の整数を入力してください");
+  }
+
+  let factor = 2;
+  let first = true;
+  let reslt = `${value} = `;
+
+  while (value > 1) {
+    while (value % factor === 0) {
+      if (!first) {
+        reslt += " × ";
+      }
+      reslt += factor;
+      value /= factor;
+      first = false;
+    }
+    factor++;
+  }
+
+  return reslt;
 };

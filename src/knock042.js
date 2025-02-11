@@ -28,5 +28,9 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {string} - "OK" または "NG"
  */
 export const knock = (num1 = 1, num2 = 2, num3 = 3) => {
-  throw new TrainingSkipError("未実装");
+  if(num1 <= num2 && num2 <= num3){
+    return "OK";
+  }else{
+    return "NG";
+  }
 };

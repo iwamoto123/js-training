@@ -36,5 +36,22 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 負の数が含まれる場合は "0以上の整数を入力してください" というエラーを投げる
  */
 export const knock = (numbers = [10, 5, 3, 8, 1]) => {
-  throw new TrainingSkipError("未実装");
+  if(numbers.length !== 5){
+    throw new Error("5つの数値を入力してください");
+  }
+  if(numbers.some(value => value < 0)){
+    throw new Error("0以上の整数を入力してください");
+  }
+
+  const graphArr = [];
+
+  for(const number of numbers){
+    let graph = "";
+    for(let i = 1; i <= number; i++){
+      graph += "*";
+    }
+    graphArr.push(`${String(number).padStart(2, " ")}: ${graph}`);
+  }
+
+  return graphArr.join("\n");
 };

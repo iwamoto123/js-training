@@ -34,5 +34,17 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @returns {Array<string>} - 各要素が数値または"foo"/"bar"/"foobar"の文字列の配列
  */
 export const knock = () => {
-  throw new TrainingSkipError("未実装");
+  const result = [];
+  for(let i = 1; i <= 100; i++){
+    if(i % 3 !== 0 && i % 5 !== 0){
+      result.push(i.toString());
+    }else if(i % 3 === 0 && i % 5 === 0){
+      result.push("foobar");
+    }else if(i % 3 === 0){
+      result.push("foo");
+    }else{
+      result.push("bar");
+    }
+  }
+  return result;
 };

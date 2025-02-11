@@ -43,5 +43,14 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - aが0の場合は "2次方程式ではありません" というエラーを投げる
  */
 export const knock = (a = 4, b = -7, c = 1) => {
-  throw new TrainingSkipError("未実装");
+  let d = b*b - 4*a*c
+  if(a === 0){
+    throw new Error("2次方程式ではありません");
+  }else if(d > 0){
+    return "2つの実数解を持ちます";
+  }else if(d < 0){
+    return "2つの虚数解を持ちます";
+  }else{
+    return "重解を持ちます";
+  }
 };

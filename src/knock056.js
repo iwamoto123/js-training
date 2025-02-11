@@ -28,5 +28,24 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 負の数の場合は "0以上の整数を入力してください" というエラーを投げる
  */
 export const knock = (decimal = 13) => {
-  throw new TrainingSkipError("未実装");
+  if(decimal < 0){
+    throw new Error("0以上の整数を入力してください");
+  }
+
+  if(decimal === 0){
+    return "0";
+  }
+
+let binary = "";
+let remainder = 0;
+let quotient = decimal;
+
+while(quotient > 0){
+  remainder = quotient % 2;
+  binary = remainder + binary;
+  quotient = Math.floor(quotient / 2);
+}
+
+return binary;
+
 };

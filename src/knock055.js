@@ -32,5 +32,19 @@ import { TrainingSkipError } from "./common/TrainingSkipError.js";
  * @throws {Error} - 回数が0以下の場合は "正の整数を指定してください" というエラーを投げる
  */
 export const knock = (char = "*", count = 5) => {
-  throw new TrainingSkipError("未実装");
+  if (char.length !== 1) {
+    throw new Error("1文字を指定してください");
+  }
+
+  if (count <= 0) {
+    throw new Error("正の整数を指定してください");
+  }
+
+  let reslt = "";
+
+  for (let i = 1; i <= count; i++) {
+    reslt += `${char}`;
+  }
+
+  return reslt;
 };
